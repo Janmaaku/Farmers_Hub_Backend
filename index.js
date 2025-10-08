@@ -16,13 +16,6 @@ app.use(
   })
 );
 
-// Add this debug code temporarily
-console.log("Environment Variables Check:");
-console.log("PROJECT_ID:", process.env.FIREBASE_PROJECT_ID);
-console.log("CLIENT_EMAIL:", process.env.FIREBASE_CLIENT_EMAIL);
-console.log("PRIVATE_KEY exists:", !!process.env.FIREBASE_PRIVATE_KEY);
-console.log("---");
-
 // Middlewares
 app.use(cors());
 app.use(express.json());

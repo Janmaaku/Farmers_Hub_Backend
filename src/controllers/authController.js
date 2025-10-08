@@ -54,6 +54,7 @@ export const googleLogin = async (req, res) => {
         email: decodedToken.email,
         name: decodedToken.name,
         picture: decodedToken.picture,
+        role: "buyer",
       },
       isNewUser: !userDoc.exists,
     });
