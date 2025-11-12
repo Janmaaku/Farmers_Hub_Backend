@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./src/routes/auth.js";
+import stripeRoutes from "./src/routes/stripe.js";
+import cartsRoutes from "./src/routes/carts.js";
+
 // Load env vars
 dotenv.config();
 
@@ -28,6 +31,9 @@ app.get("/", (req, res) => {
 // Use routes
 app.use("/api/auth", authRoutes);
 
+app.use("/api/stripe", stripeRoutes);
+
+app.use("/api/carts", cartsRoutes);
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
