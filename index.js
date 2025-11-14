@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import authRoutes from "./src/routes/auth.js";
 import stripeRoutes from "./src/routes/stripe.js";
 import cartsRoutes from "./src/routes/carts.js";
+import adminRoutes from "./src/routes/admin.js";
 
 // Load env vars
 dotenv.config();
@@ -34,6 +35,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/stripe", stripeRoutes);
 
 app.use("/api/carts", cartsRoutes);
+
+app.use("/api/admin", adminRoutes);
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

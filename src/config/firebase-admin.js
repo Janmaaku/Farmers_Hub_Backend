@@ -3,6 +3,7 @@ import "dotenv/config"; // Add this at the very top
 import { initializeApp, getApps, cert } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 import { getFirestore } from "firebase-admin/firestore";
+import admin from "firebase-admin";
 
 function required(name) {
   const v = process.env[name];
@@ -39,5 +40,6 @@ const adminApp =
 
 const adminAuth = getAuth(adminApp);
 const adminDb = getFirestore(adminApp);
+const FieldValues = admin.firestore.FieldValue;
 
-export { adminAuth, adminDb, adminApp }; // Changed from module.exports
+export { adminAuth, adminDb, adminApp, FieldValues }; // Changed from module.exports
